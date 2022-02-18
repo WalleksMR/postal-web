@@ -1,0 +1,20 @@
+.signInButton {
+  width: 80px;
+  height: 65%;
+  color: var(--white);
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin-left: 3rem;
+  border-left: 0.1px solid var(--white);
+  div {
+    transition: color 0.3s;
+    &:hover {
+      color: var(--white-50);
+      cursor: pointer;
+    }
+  }
+  p {
+    margin-top: 0.1rem;
+  }
+}
