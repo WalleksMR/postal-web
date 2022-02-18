@@ -1,0 +1,41 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Titulo do video",
+      "description": "lorem ipsum dolor sit amet, consectetur adip",
+      "urlVideo": "https://www.youtube.com/watch?v=T6d-hia3c1I",
+      "likes": 222,
+      "deslike": 12,
+      "author": 1
+    },
+    {
+      "id": 3,
+      "title": "Titulo do video",
+      "description": "lorem ipsum dolor sit amet, consectetur adip",
+      "urlVideo": "https://www.youtube.com/watch?v=T6d-hia3c1I",
+      "likes": 222,
+      "deslike": 12,
+      "author": 1
+    },
+    {
+      "id": 3,
+      "title": "Titulo do video",
+      "description": "lorem ipsum dolor sit amet, consectetur adip",
+      "urlVideo": "https://www.youtube.com/watch?v=T6d-hia3c1I",
+      "likes": 222,
+      "deslike": 12,
+      "author": 1
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "Walleks",
+      "lastname": "Rodrigues Miranda",
+      "email": "walleks@portalweb.com.br",
+      "password": "password",
+      "isAdmin": true
+    }
+  ]
+}
