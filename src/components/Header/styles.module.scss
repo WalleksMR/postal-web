@@ -1,0 +1,35 @@
+.container {
+  width: 100%;
+  height: 100px;
+  background: var(--blue-100);
+}
+
+.header {
+  max-width: 1410px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  nav {
+    margin-left: auto;
+    ul {
+      display: flex;
+      list-style: none;
+      li {
+        a {
+          color: var(--white);
+          transition: filter 0.2s;
+          &:hover {
+            filter: brightness(0.8);
+          }
+        }
+      }
+
+      > li {
+        margin-left: 2rem;
+      }
+    }
+  }
+}
