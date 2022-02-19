@@ -8,3 +8,12 @@ export function addVideoToPlayer(video: IPlayer) {
     },
   };
 }
+
+export function addLikeToVideo(video: IPlayer) {
+  return {
+    type: "ADD_LIKE_TO_VIDEO",
+    payload: {
+      video,
+    },
+  };
+}
