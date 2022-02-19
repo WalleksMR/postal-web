@@ -12,10 +12,26 @@ const Header: NextPage = () => {
         <nav>
           <ul>
             <li>
-              <a href={`${process.env.BASE_URL}`}>Inicio</a>
+              <a
+                href={
+                  process.env.NEXT_PUBLIC_BASE_URL
+                    ? process.env.NEXT_PUBLIC_BASE_URL
+                    : "http://localhost:3000"
+                }
+              >
+                Inicio
+              </a>
             </li>
             <li>
-              <Link href={`${process.env.BASE_URL}/admin`}>Novo vídeo</Link>
+              <Link
+                href={`${
+                  process.env.NEXT_PUBLIC_BASE_URL
+                    ? process.env.NEXT_PUBLIC_BASE_URL
+                    : "http://localhost:3000"
+                }/admin`}
+              >
+                Novo vídeo
+              </Link>
             </li>
           </ul>
         </nav>
