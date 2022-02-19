@@ -32,7 +32,7 @@ const BannerPlay: NextPage = () => {
       <div className={styles.container}>
         <div className={styles.content}>
           <div key={video.id} className={styles.playerVideo}>
-            <ReactPlayer url={video.url} width={850} height={430} autoPlay />
+            <ReactPlayer url={video.url} autoPlay />
             <div>
               <span>
                 <button>
