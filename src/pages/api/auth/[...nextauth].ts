@@ -1,26 +1,35 @@
 import NextAuth from "next-auth";
-import GoogleProvider from "next-auth/providers/google";
+import Providers from "next-auth/providers";
+import { ICreateDTO } from "../../../services/firebase/dto/userDTO";
+import UsersRepository from "../../../services/firebase/repository/UsersRepository";
 
 export default NextAuth({
   providers: [
-    GoogleProvider({
+    Providers.Google({
       clientId: String(process.env.GOOGLE_ID),
       clientSecret: String(process.env.GOOGLE_SECRET),
-      authorization: {
-        params: {
-          prompt: "consent",
-          access_type: "offline",
-          response_type: "code",
-        },
-      },
     }),
   ],
   callbacks: {
-    async signIn({ user, account, email, profile }) {
-      // Armazena o user no banco de dados
+    async signIn(user, account, profile) {
+      const userFB = await UsersRepository.listAll();
+      const userExist = userFB.find((u) => u.id === user.id);
+      if (!userExist) {
+        try {
+          const newUse: ICreateDTO = {
+            name: user.name!,
+            email: user.email!,
+            isAdmin: false,
+            urlProfile: user.image!,
+          };
 
+          await UsersRepository.create(newUse);
+          return true;
+        } catch (error) {
+          return false;
+        }
+      }
       return true;
     },
   },
-  secret: process.env.AUTH_SECRET,
 });

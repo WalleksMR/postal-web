@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { SessionProvider as NextAuthProvider } from "next-auth/react";
+import { Provider as NextAuthProvider } from "next-auth/client";
 
 import "../styles/globals.scss";
 import styles from "../styles/app.module.scss";
@@ -10,7 +10,7 @@ import store from "../store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <NextAuthProvider session={pageProps.session} baseUrl="/api/auth">
+    <NextAuthProvider session={pageProps.session}>
       <Provider store={store}>
         <div className={styles.wapper}></div>
         <main>
