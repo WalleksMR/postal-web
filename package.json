@@ -9,11 +9,12 @@
     "server": "json-server server.json -p 3030"
   },
   "dependencies": {
-    "@next-auth/firebase-adapter": "0.0.2-canary.207",
+    "@unform/core": "^2.1.6",
+    "@unform/web": "^2.1.6",
     "firebase": "^9.6.6",
     "immer": "^9.0.12",
     "next": "12.0.10",
-    "next-auth": "^4.2.1",
+    "next-auth": "^3.27.3",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-firebase-hooks": "^5.0.2",
