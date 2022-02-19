@@ -15,10 +15,7 @@ const Header: NextPage = () => {
               <a href="http://localhost:3000">Inicio</a>
             </li>
             <li>
-              <a href="#">Vídeos</a>
-            </li>
-            <li>
-              <a href="#">Nóticias</a>
+              <Link href="http://localhost:3000/admin">Novo vídeo</Link>
             </li>
           </ul>
         </nav>

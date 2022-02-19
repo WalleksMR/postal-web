@@ -1,17 +1,23 @@
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signIn, signOut } from "next-auth/client";
 import styles from "./styles.module.scss";
-import { FaGoogle } from "react-icons/fa";
-import { FiUser } from "react-icons/fi";
+import { FaRegUser, FaUserCircle } from "react-icons/fa";
 
 export function SignInButton() {
-  const { data: session, status } = useSession();
+  const [session] = useSession();
 
   return (
     <div className={styles.signInButton}>
-      <div>
-        <FiUser size={32} />
-        <p>login</p>
-      </div>
+      {session?.user ? (
+        <div onClick={() => signOut()}>
+          <FaUserCircle size={32} />
+          <p>{session.user.name}</p>
+        </div>
+      ) : (
+        <div onClick={() => signIn()}>
+          <FaRegUser size={32} />
+          <p>login</p>
+        </div>
+      )}
     </div>
   );
 }
