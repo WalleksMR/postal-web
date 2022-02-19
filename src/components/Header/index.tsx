@@ -12,10 +12,10 @@ const Header: NextPage = () => {
         <nav>
           <ul>
             <li>
-              <a href="http://localhost:3000">Inicio</a>
+              <a href={`${process.env.BASE_URL}`}>Inicio</a>
             </li>
             <li>
-              <Link href="http://localhost:3000/admin">Novo vídeo</Link>
+              <Link href={`${process.env.BASE_URL}/admin`}>Novo vídeo</Link>
             </li>
           </ul>
         </nav>
